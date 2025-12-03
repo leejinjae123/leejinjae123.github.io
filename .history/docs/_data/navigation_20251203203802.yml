@@ -40,7 +40,7 @@ sidebar-category:
   - title: "Flutter"
     children:
     - title: "Flutter Firebase 실시간 채팅 구현"
-      url: /Flutter/flutter-firebase-realtime-chat/
+      url: /flutter-firebase-realtime-chat/
 
 # documentation links
 docs:
