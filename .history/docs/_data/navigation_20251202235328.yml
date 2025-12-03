@@ -31,13 +31,6 @@ main:
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
 
-# main sidebar
-main-sidebar:
-  - title: "제목 테스트"
-    url: /docs/structure/
-    children:
-    - title: "소제목 테스트"
-      url: /docs/authors/
 
 # documentation links
 docs:
