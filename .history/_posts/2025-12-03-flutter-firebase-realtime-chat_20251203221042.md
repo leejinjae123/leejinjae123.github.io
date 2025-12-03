@@ -24,7 +24,7 @@ sidebar:
     
 - Cloud Firestore의 구조
 
-    ![Firebase Cloud Firestore 구조](/assets/png/Firebase_Cloud_Firestore_%25E1%2584%2580%25E1%2585%25AE%25E1%2584%258C%25E1%2585%25A9.png)
+    ![Firebase Cloud Firestore 구조](/assets/png/Firebase_Cloud_Firestore_%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9.png)
     
 
 ## 그래서 어떻게 쓰겠다는 건데?
@@ -45,7 +45,7 @@ sidebar:
     
     - 모든 유저가 쓴 채팅창을 보관하는 Chat 컬렉션을 구조로 잡았다.
     
-    ![스크린샷 2023-04-25 오전 11.38.41](/assets/png/%25E1%2584~2.PNG.PNG)
+    ![스크린샷 2023-04-25 오전 11.38.41](/assets/png/%E1%84%80~2.PNG)
     
 - 채팅방 첫 페이지(User 채팅방)
 
