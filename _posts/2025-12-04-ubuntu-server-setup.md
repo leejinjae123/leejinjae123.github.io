@@ -21,8 +21,8 @@ sidebar:
 ## 1. 우분투 설치
 
 - 우분투 서버 설치를 위해 ISO를 다운받고, Rufus를 사용해 부팅디스크로 만들었다.
-  - 우분투 ISO : https://ubuntu.com/download/server
-  - Rufus : https://rufus.ie/ko/
+  - 우분투 ISO [우분투 ISO](https://ubuntu.com/download/server)
+  - Rufus [Rufus](https://rufus.ie/ko/)
 
 ## 2. 네트워크 세팅
 
@@ -33,7 +33,7 @@ sidebar:
 이 개념을 숙지하고 들어가자.
 본인은 LG U+를 사용하고 있기에, 예시는 LG U+ 기준으로 작성한다.
 
-- 192.168.219.1(LG U+ 기준)으로 접속하여, 공유기에 접속한다.
+- [192.168.219.1](http://192.168.219.1)(LG U+ 기준)으로 접속하여, 공유기에 접속한다.
   ![ 공유기 1 ](/assets/png/공유기1.png)
 
 - 서버 노트북이 접속하는 IP주소를 DHCP 고정 할당으로 추가한다.
@@ -90,7 +90,7 @@ sidebar:
   ssh {사용자계정}@{서버IP} 
   만약 포트를 22가 아닌 다른 것으로 설정했다면 -> ssh -p {포트번호} {사용자계정}@{서버IP}
 ```
-출처: https://clsrn4561.tistory.com/25
+출처: [https://clsrn4561.tistory.com/25](https://clsrn4561.tistory.com/25)
 
 ## 후기
 
