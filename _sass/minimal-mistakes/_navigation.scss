@@ -523,10 +523,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  max-height: 0;
-  overflow: hidden;
+  max-height: 9999px;
+  overflow: visible;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  opacity: 0;
+  opacity: 1;
+  margin-top: 0.5rem;
 
   li {
     margin: 0;
@@ -546,13 +547,25 @@
   }
 }
 
+.nav__toggle:not(:checked) ~ .nav__sub-title::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
 .nav__toggle:checked ~ .nav__sub-title::after {
   transform: translateY(-50%) rotate(180deg);
+}
+
+.nav__toggle:not(:checked) ~ .nav__children {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
 }
 
 .nav__toggle:checked ~ .nav__children {
   max-height: 9999px;
   opacity: 1;
+  overflow: visible;
   margin-top: 0.5rem;
 }
 
