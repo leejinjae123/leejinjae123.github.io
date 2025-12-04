@@ -21,8 +21,8 @@ sidebar:
 ## 1. 우분투 설치
 
 - 우분투 서버 설치를 위해 ISO를 다운받고, Rufus를 사용해 부팅디스크로 만들었다.
-  - 우분투 ISO [https://ubuntu.com/download/server](https://ubuntu.com/download/server)
-  - Rufus [https://rufus.ie/ko/](https://rufus.ie/ko/)
+  - 우분투 ISO : [https://ubuntu.com/download/server](https://ubuntu.com/download/server)
+  - Rufus : [https://rufus.ie/ko/](https://rufus.ie/ko/)
 
 ## 2. 네트워크 세팅
 
