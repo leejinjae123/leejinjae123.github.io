@@ -1,0 +1,112 @@
+---
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+# Projects
+
+제가 작업한 주요 프로젝트들을 소개합니다.
+
+## AromaBank - 향료 관리 시스템
+
+**기간**: 2025.04 ~ 재직중  
+**역할**: 풀스택 개발자  
+**기술 스택**: Java, Spring Framework, MyBatis, MySQL, JSP, JavaScript, Apache POI
+
+향료 제조업체를 위한 종합 관리 시스템으로, 제품 정보부터 안전성 문서까지 통합 관리하는 웹 애플리케이션입니다.
+
+### 주요 기능
+- 제품 정보 관리 - 향료 제품의 상세 스펙 정보 등록 및 회사별 카테고리 분류
+- 안전성 문서 관리 - 국제 규정 함량 DB화 및 MSDS, IFRA, Allergen 등 국제 규정 준수 문서 작성/관리 및 PDF 출력
+- Excel 기반 자동화 - Apache POI 활용한 파일 업로드/다운로드 및 템플릿 기반 문서 생성
+- 사용자 권한 관리 - Spring Security 기반 인증/인가 및 업체별 데이터 접근 제어
+- 데이터 표준화 및 자동화 - 고유 ID 체계 구축 및 관계 테이블 설계로 자동화 작업 구현
+- 부서간 문서 공유 시스템 - 물리적 문서 디지털화 및 실시간 공유/승인 워크플로우
+- 통합 대시보드 - 프로젝트 일정별 업무 관리 및 진행 상황 시각화
+- MES 도입 – 작업지시서, BOM, 재고관리 등을 도입하여 공정을 실시간으로 관리, 모니터링
+
+### 기술적 성과
+- MyBatis를 활용한 복잡한 쿼리 최적화로 대용량 데이터 처리 성능 향상
+- Ajax 기반 비동기 처리로 사용자 경험 개선
+- 모듈화된 아키텍처로 유지보수성 확보
+- 문서 디지털화로 부서간 업무 처리 시간 50% 단축
+
+---
+
+## Logi ERP - 물류 통합 관리 시스템
+
+**기간**: 2023.11 ~ 2024.10 (1년)  
+**역할**: 풀스택 개발자  
+**기술 스택**: Java, Spring Framework, JSP, MySQL, MyBatis, JavaScript, Stored Procedure, Apache POI
+
+(주) 성진 물류회사의 물류 전반을 관리하기 위한 ERP 시스템으로, 주문·재고·거래·통계 등 주요 업무를 웹 기반으로 통합 관리하는 시스템입니다.
+
+### 주요 기능
+- 거래 관리 – 가상계좌 API 및 SDSI 연동으로 실시간 입금 내역 자동 반영 및 DB 연동
+- 코드 자동화 – MySQL Trigger를 이용한 거래처·사업장·매출/매입 코드 자동 채번
+- 주문/관리 페이지 분리 – 거래처 전용 주문 페이지와 내부 관리 페이지 분리 및 데이터 연동
+- 재고 관리 최적화 – 마감 기능 구현으로 전잔고 검색 속도 개선
+- 통계 및 리포트 – 매출/매입 데이터 통계화 및 세금계산서, 거래처 원장 일괄 출력 기능
+- Excel 기반 기능 – 테이블 데이터 Export 및 통계 데이터 Excel 자동화 처리
+- 회전율/수불부 관리 – 재고 흐름 및 회전율 관리 기능 제공
+- 검색 성능 최적화 – Procedure 기반 검색 최적화로 대용량 데이터 처리 속도 향상
+
+### 기술적 성과
+- Trigger & SP 활용으로 핵심 데이터 자동화 및 기존 프로그램 대비 검색 성능 50% 이상 개선
+- 거래처 전용 주문 시스템 분리로 업무 효율성 향상
+- 재고관리, 마감 기능으로 데이터 조회 속도 안정화 및 시스템 신뢰성 확보
+- 문서 자동화 및 대량 인쇄 기능으로 업무 처리 시간 단축 및 관리 비용 절감
+
+---
+
+## i-rept - 파충류 커뮤니티 & 쇼핑몰 앱
+
+**기간**: 2023.03 ~ 2023.08 (6개월)  
+**역할**: 풀스택 개발자  
+**기술 스택**: Flutter, Dart, Spring Boot, JPA, Firebase, AWS EC2
+
+기존 PHP 기반 서비스를 Flutter와 Spring Boot, JPA로 전면 재구현한 모바일 애플리케이션입니다.
+
+### Flutter 개발
+- REST API 연동 및 Provider 패턴을 통한 반응형 UI 구현
+- Firebase Authentication 활용 소셜 로그인 (Kakao, 네이버, Apple, Google, Facebook) 및 이메일/비밀번호 로그인
+- Firebase Realtime Database 이용 실시간 채팅 기능 구현
+- Firebase Cloud Messaging 활용 푸시 알림 기능 추가
+- Google Play 및 App Store 심사 및 배포
+- 펫 다이어리, 개인 일기, 거래 페이지 등 다양한 기능 구현
+
+### Spring Boot & JPA
+- JpaRepository 기반 CRUD API 개발
+- 복잡한 쿼리 최적화를 위한 QueryDSL 적용
+- Firebase Auth 및 메시징 연동 Callback API 구현
+
+### AWS 인프라
+- Spring Boot 서버를 AWS EC2에 배포 및 운영
+
+### 앱 링크
+- [Google Play](https://play.google.com/store/apps/details?id=com.reptcomunity&hl=ko)
+- [Apple App Store](https://apps.apple.com/kr/app/irept/id1492882301)
+
+---
+
+## Next.js 랜딩페이지 재구축
+
+**기간**: 2023.08 ~ 2023.09 (2개월)  
+**역할**: 프론트엔드 개발자  
+**기술 스택**: Next.js, TypeScript, JavaScript(ES6+), React Hooks, AWS Lightsail
+
+기존 PHP 기반 템플릿으로 제작된 랜딩페이지를 Next.js + TypeScript 기반으로 재구축하여, 성능 최적화 및 사용자 경험을 강화한 반응형 웹 페이지입니다.
+
+### 주요 기능
+- 페이지 재구축 – PHP 템플릿 기반 랜딩페이지를 Next.js + TypeScript로 전면 재개발
+- 인터랙션 구현 – 바닐라 JS 및 커스텀 React Hooks를 활용한 동적 UI/UX 개발
+- 반응형 디자인 – 모바일·웹 뷰 대응을 위한 반응형 레이아웃 구현
+- 멀티미디어 최적화 – 다수의 동영상 및 이미지 최적화로 페이지 로딩 속도 개선
+- 배포 환경 구축 – AWS Lightsail 환경에서 Next.js 프로젝트 배포 및 운영
+
+### 기술적 성과
+- 최신 프레임워크 도입으로 유지보수성 및 확장성 확보
+- 반응형 UI 적용으로 다양한 디바이스에서 사용자 경험 향상
+- AWS Lightsail 배포 자동화로 운영 효율성 증대
+

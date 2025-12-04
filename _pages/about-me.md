@@ -14,94 +14,39 @@ author_profile: true
 
 </div>
 
+## 현재
+
+현재 **㈜ 위즈랩**에서 풀스택 개발자로 일하고 있습니다. 주로 Spring Boot와 Flutter를 활용한 웹/모바일 애플리케이션 개발을 담당하고 있어요.
+
+## 이전 경험
+
+**제이소프트웨어㈜**에서 Flutter와 Spring Boot를 활용해 파충류 커뮤니티 앱(i-rept)을 처음부터 개발하고, 구글 플레이스토어와 애플 앱스토어에 배포했습니다. Firebase를 활용한 소셜 로그인, 실시간 채팅, 푸시 알림 등 다양한 기능을 구현했어요.
+
+그 전에는 **케이엘피**에서 Next.js와 TypeScript로 랜딩페이지를 재구축했고, **위즈랩**에서는 물류 ERP 시스템과 향료 관리 시스템을 개발했습니다.
+
 ## 기술 스택
 
-**Backend**: Spring Boot & JPA, Java / JSP & SpringMVC, MyBatis & MySQL, Python, JUnit
+주로 사용하는 기술들:
+- **Backend**: Spring Boot & JPA, Java, MyBatis, MySQL
+- **Frontend**: React.js, Next.js, JavaScript, TypeScript
+- **Mobile**: Flutter & Dart
+- **Cloud**: AWS (EC2, Lightsail)
+- **기타**: Firebase, Python, JUnit
 
-**Frontend**: React.js & Next.js & Node.js, JavaScript
+새로운 기술을 배우는 것을 좋아하고, 처음 보는 기술이라도 빠르게 적응하고 실무에 적용하는 것에 자신이 있습니다.
 
-**Mobile**: Flutter & Dart
+## 좋아하는 것들
 
-## 경력
+코딩을 하면서 느낀 점은, 같은 기능이라도 누가 구현하느냐에 따라 완전히 다른 코드가 나온다는 것입니다. 언어마다 다른 방법으로 문제를 해결하는 과정을 알아가는 것이 정말 흥미로워요.
 
-### ㈜ 위즈랩 (2025.04 ~ 재직중)
-**SI개발 · 임시직/프리랜서**
+프로젝트를 성공적으로 완료하고, 실제 사용자들이 서비스를 활용하는 모습을 보는 것이 가장 큰 보람입니다. 특히 앱을 스토어에 출시하고 박람회 현장에서 사용자들이 서비스를 사용하는 모습을 보며 큰 성취감을 느꼈어요.
 
-**AromaBank** - 향료 관리 시스템
+## 앞으로
 
-- **기술 스택**: Java, Spring Framework, MyBatis, MySQL, JSP, JavaScript, Apache POI
-- **프로젝트 개요**: 향료 제조업체를 위한 종합 관리 시스템으로, 제품 정보부터 안전성 문서까지 통합 관리하는 웹 애플리케이션
-- **주요 기능**:
-  - 제품 정보 관리 - 향료 제품의 상세 스펙 정보 등록 및 회사별 카테고리 분류
-  - 안전성 문서 관리 - 국제 규정 함량 DB화 및 향료에 대한 MSDS, IFRA, Allergen 등 국제 규정 준수 문서 작성/관리 및 PDF 출력 구현
-  - Excel 기반 자동화 - Apache POI 활용한 파일 업로드/다운로드 및 템플릿 기반 문서 생성
-  - 사용자 권한 관리 - Spring Security 기반 인증/인가 및 업체별 데이터 접근 제어
-  - 데이터 표준화 및 자동화 - 기존 규칙없이 나열되어있던 DB에 고유 ID 체계 구축 및 관계 테이블 설계로 자동화 작업 구현
-  - 부서간 문서 공유 시스템 - 물리적 문서 디지털화 및 실시간 공유/승인 워크플로우
-  - 통합 대시보드 - 프로젝트 일정별 업무 관리 및 진행 상황 시각화로 사용성 극대화
-  - MES 도입 – 작업지시서, BOM, 재고관리 등을 도입하여 공정을 실시간으로 관리, 모니터링
-- **기술적 성과**:
-  - MyBatis를 활용한 복잡한 쿼리 최적화로 대용량 데이터 처리 성능 향상
-  - Ajax 기반 비동기 처리로 사용자 경험 개선
-  - 모듈화된 아키텍처로 유지보수성 확보
-  - 데이터 표준화를 통한 시스템 간 연동성 향상
-  - 문서 디지털화로 부서간 업무 처리 시간 50% 단축
+최신 기술 트렌드를 빠르게 습득하고 실무에 적용하는 능력을 계속 발전시켜 나가고 싶습니다. 사용자에게 가치 있는 서비스를 만드는 개발자가 되고 싶어요.
+
+블로그를 통해 개발하면서 배운 것들을 기록하고 공유하고 있습니다. 궁금한 점이 있으시면 언제든 연락주세요! 😊
 
 ---
 
-### ㈜ 위즈랩 (2023.11 ~ 2024.10 · 1년)
-**SI개발 · 소프트웨어팀 사원**
-
-**Logi ERP** - 물류 통합 관리 시스템
-
-- **기술 스택**: Java, Spring Framework, JSP, MySQL, MyBatis, JavaScript, Stored Procedure, Apache POI
-- **프로젝트 개요**: (주) 성진 물류회사의 물류 전반을 관리하기 위한 ERP 시스템으로, 주문·재고·거래·통계 등 주요 업무를 웹 기반으로 통합 관리하는 시스템 개발을 담당
-- **주요 기능**:
-  - 거래 관리 – 가상계좌 API 및 SDSI 연동으로 실시간 입금 내역 자동 반영 및 DB 연동
-  - 코드 자동화 – MySQL Trigger를 이용한 거래처·사업장·매출/매입 코드 자동 채번
-  - 주문/관리 페이지 분리 – 거래처 전용 주문 페이지와 내부 관리 페이지 분리 및 데이터 연동
-  - 재고 관리 최적화 – 마감 기능 구현으로 전잔고 검색 속도 개선
-  - 통계 및 리포트 – 매출/매입 데이터 통계화 및 세금계산서, 거래처 원장 일괄 출력 기능 개발
-  - Excel 기반 기능 – 테이블 데이터 Export 및 통계 데이터 Excel 자동화 처리
-  - 회전율/수불부 관리 – 재고 흐름 및 회전율 관리 기능 제공
-  - 검색 성능 최적화 – Procedure 기반 검색 최적화로 대용량 데이터 처리 속도 향상
-- **기술적 성과**:
-  - Trigger & SP 활용으로 핵심 데이터 자동화 및 기존 프로그램 대비 검색 성능 50% 이상 개선
-  - 거래처 전용 주문 시스템 분리로 업무 효율성 향상
-  - 재고관리, 마감 기능으로 데이터 조회 속도 안정화 및 시스템 신뢰성 확보
-  - 문서 자동화 및 대량 인쇄 기능으로 업무 처리 시간 단축 및 관리 비용 절감
-
----
-
-### 케이엘피 (2023.08 ~ 2023.09 · 2개월)
-**임시직/프리랜서**
-
-- **기술 스택**: Next.js, TypeScript, JavaScript(ES6+), React Hooks, AWS Lightsail
-- **프로젝트 개요**: 기존 PHP 기반 템플릿으로 제작된 랜딩페이지를 Next.js + TypeScript 기반으로 재구축하여, 성능 최적화 및 사용자 경험을 강화한 반응형 웹 페이지 제작
-- **주요 기능**:
-  - 페이지 재구축 – PHP 템플릿 기반 랜딩페이지를 Next.js + TypeScript로 전면 재개발
-  - 인터랙션 구현 – 바닐라 JS 및 커스텀 React Hooks를 활용한 동적 UI/UX 개발
-  - 반응형 디자인 – 모바일·웹 뷰 대응을 위한 반응형 레이아웃 구현
-  - 멀티미디어 최적화 – 다수의 동영상 및 이미지 최적화로 페이지 로딩 속도 개선
-  - 배포 환경 구축 – AWS Lightsail 환경에서 Next.js 프로젝트 배포 및 운영
-- **기술적 성과**:
-  - 최신 프레임워크 도입으로 유지보수성 및 확장성 확보
-  - 반응형 UI 적용으로 다양한 디바이스에서 사용자 경험 향상
-  - AWS Lightsail 배포 자동화로 운영 효율성 증대
-
----
-
-### 제이소프트웨어㈜ (2023.03 ~ 2023.08 · 6개월)
-**SI개발 · 소프트웨어팀 사원**
-
-**i-rept** - 파충류 커뮤니티 & 쇼핑몰 앱
-
-- **기술 스택**: Flutter, Dart, Spring Boot, JPA, Firebase, AWS EC2
-- **프로젝트 개요**: 기존 PHP 기반 유지보수 후 Flutter와 Spring Boot, JPA로 재구현
-- **구현 내용**:
-  - **Flutter**: REST API 연동 및 Provider 패턴을 통한 반응형 UI 구현, Firebase Authentication 활용 소셜 로그인 (Kakao, 네이버, Apple, Google, Facebook) 및 이메일/비밀번호 로그인, Firebase Realtime Database 이용 실시간 채팅 기능 구현, Firebase Cloud Messaging 활용 푸시 알림 기능 추가, Google Play 및 App Store 심사 및 배포, 펫 다이어리, 개인 일기, 거래 페이지 등 다양한 기능을 제공하여 사용자 경험(UX)과 사용성을 극대화하는 동적 서비스 구현
-  - **Spring Boot & JPA**: JpaRepository 기반 CRUD API 개발, 복잡한 쿼리 최적화를 위한 QueryDSL 적용, Firebase Auth 및 메시징 연동 Callback API 구현
-  - **AWS 인프라**: Spring Boot 서버를 AWS EC2에 배포 및 운영
-- **앱 주소**:
-  - Google Play: https://play.google.com/store/apps/details?id=com.reptcomunity&hl=ko
-  - Apple App Store: https://apps.apple.com/kr/app/irept/id1492882301
+프로젝트 페이지에서 제가 작업한 프로젝트들을 확인하실 수 있습니다. → [Projects](/projects/)
