@@ -340,13 +340,20 @@
 .nav__list {
   margin-bottom: 1.5em;
 
-  input[type="checkbox"],
-  label {
+  input[type="checkbox"] {
     display: none;
   }
 
+  > label {
+    display: none;
+  }
+
+  .nav__sub-title {
+    display: block !important;
+  }
+
   @include breakpoint(max-width $large - 1px) {
-    label {
+    > label {
       position: relative;
       display: inline-block;
       padding: 0.5em 2.5em 0.5em 1em;
@@ -491,7 +498,7 @@
 }
 
 .nav__sub-title {
-  display: block;
+  display: block !important;
   margin: 0.5rem 0;
   padding: 0.25rem 0;
   font-family: $sans-serif-narrow;
@@ -502,6 +509,12 @@
   cursor: pointer;
   position: relative;
   padding-inline-end: 1.5em;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  span {
+    display: inline-block;
+  }
 
   a {
     color: inherit;

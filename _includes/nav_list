@@ -12,7 +12,7 @@
           {% if nav.children != null %}
             <input id="{{ nav_id }}" class="nav__toggle" type="checkbox" checked />
             <label for="{{ nav_id }}" class="nav__sub-title">
-              {{ nav.title }}
+              <span>{{ nav.title }}</span>
             </label>
             <ul class="nav__children">
               {% for child in nav.children %}
