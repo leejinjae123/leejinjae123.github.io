@@ -1,0 +1,23 @@
+# main links
+main:
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "About Me"
+    url: /about-me/
+  - title: "Projects"
+    url: /projects/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+# main sidebar
+sidebar-category:
+  - title: "Flutter"
+    children:
+    - title: "Flutter Firebase 실시간 채팅 구현"
+      url: /flutter/flutter-firebase-realtime-chat/
+    - title: "Flutter Firebase 로그인"
+      url: /flutter/flutter-firebase-login/
