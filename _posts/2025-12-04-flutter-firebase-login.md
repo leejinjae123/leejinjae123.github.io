@@ -1,7 +1,7 @@
 ---
 title: "Flutter Firebase 로그인"
-date: 2025-12-03
-last_modified_at: 2025-12-03
+date: 2025-12-04
+last_modified_at: 2025-12-04
 categories:
   - Flutter
 tags:
