@@ -6,13 +6,24 @@
     {% for navname in include.nav %}
       {% assign navigation = site.data.navigation[navname] %}
       {% for nav in navigation %}
-        {% assign nav_index = forloop.index %}
-        {% assign nav_id = navname | append: '-' | append: nav_index | prepend: 'nav-' %}
-        <li class="nav__item">
+        {% assign has_active_child = false %}
+        {% if nav.children != null %}
+          {% for child in nav.children %}
+            {% if child.url == page.url %}
+              {% assign has_active_child = true %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        <li>
           {% if nav.children != null %}
-            <input id="{{ nav_id }}" class="nav__toggle" type="checkbox" checked />
-            <label for="{{ nav_id }}" class="nav__sub-title">
-              <span>{{ nav.title }}</span>
+            <input type="checkbox" id="nav-{{ forloop.parentloop.index }}-{{ forloop.index }}" class="nav__toggle"{% if has_active_child %} checked{% endif %} />
+            <label for="nav-{{ forloop.parentloop.index }}-{{ forloop.index }}" class="nav__sub-title">
+              {% if nav.url %}
+                <a href="{{ nav.url | relative_url }}">{{ nav.title }}</a>
+              {% else %}
+                {{ nav.title }}
+              {% endif %}
+              <span class="nav__toggle-icon">▼</span>
             </label>
             <ul class="nav__children">
               {% for child in nav.children %}
