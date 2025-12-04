@@ -8,7 +8,7 @@
       {% for nav in navigation %}
         {% assign nav_index = forloop.index %}
         {% assign nav_id = navname | append: '-' | append: nav_index | prepend: 'nav-' %}
-        <li>
+        <li class="nav__item">
           {% if nav.children != null %}
             <input id="{{ nav_id }}" class="nav__toggle" type="checkbox" checked />
             <label for="{{ nav_id }}" class="nav__sub-title">
