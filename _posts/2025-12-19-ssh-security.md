@@ -9,7 +9,8 @@ tags:
   - Ubuntu
   - SSH
 sidebar:
-  nav: "sidebar-category"
+  nav: null
+permalink: /server/ssh-security/
 ---
 
 ## 0. 이제는 보안을 챙길때
