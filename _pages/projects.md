@@ -2,6 +2,8 @@
 title: "Projects"
 permalink: /projects/
 author_profile: true
+sidebar:
+  nav: "sidebar-category"
 ---
 
 제가 작업한 주요 프로젝트들을 소개합니다.

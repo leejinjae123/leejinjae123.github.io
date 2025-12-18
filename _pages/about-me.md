@@ -2,6 +2,8 @@
 title: "About Me"
 permalink: /about-me/
 author_profile: true
+sidebar:
+  nav: "sidebar-category"
 ---
 
 안녕하세요! **이진재**입니다.  
