@@ -142,7 +142,122 @@ docker desktop은 '소규모 기업' 기준을 초과하는 경우이다.
       docker compose --version (v2버전)
     ```
 
-## 3. Docker File 및 Docer-Compose File 생성
+## 3. Dockerfile 및 Docer-Compose File 생성
 
-이미지 생성을 위해 file을 만들어보자.
-docker-desktop 에서는 
+Dockerfile이란 docker 이미지를 생성하기 위한 **스크립트 파일**이다.
+Dockerfile의 특징으로는
+  - 재사용성 : 어느 환경에서도 동일한 환경을 재생성할 수 있다. <--- 내가 docker를 사용해 보고 싶었던 가장 큰 이유였다.
+  - 자동화 : 명령어를 미리 입력해, 이미지를 자동으로 생성 할 수 있다.
+  - 버전 관리 : 빌드 프로세스를 추적 할 수 있다.
+
+Dockerfile 생성을 위해서는, 프로젝트 폴더에 dockerfile이 존재해야한다.  
+현재 내가 프로젝트에서 사용하고 있는 dockerfile을 예시로 가져와보겠다.
+
+```jsx
+# Stage 1: 애플리케이션 빌드 스테이지
+# Maven과 JDK 17을 사용하여 소스 코드를 빌드하고 JAR 파일을 생성합니다.
+FROM maven:3.8-openjdk-17 AS build
+WORKDIR /app
+COPY . .
+
+# Maven 빌드 시 메모리 부족(OOM) 방지를 위한 최대 힙 메모리 설정
+ENV MAVEN_OPTS="-Xmx1024m"
+
+# 테스트 코드를 제외하고 패키징 수행하여 빌드 속도 최적화
+RUN mvn clean package -Dmaven.test.skip=true
+
+# Stage 2: 실행 전용 스테이지
+# 경량화된 JRE 환경(Alpine Linux)에서 빌드된 결과물만 실행합니다.
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+
+# 빌드 스테이지에서 생성된 JAR 파일만 복사하여 이미지 크기를 최소화
+COPY --from=build /app/target/*.jar app.jar
+
+# 애플리케이션 실행 명령
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+Stage 1 에서는 소스를 컴파일하고, 메모리 부족을 예방하기 위해 최대메모리 제한을 걸어놧다.  
+그리고 Stage 2 에서는 빌드 결과물만 가지고 와 경량화한 환경을 구축했다.  
+이런 방식을 멀티 스테이지 빌드라고 한다.
+이런식으로 미리 빌드를 하는 과정을 적어놓아 이미지를 생성하는 방법을 설명한 파일이 dockerfile이다.
+Dockerfile의 명령어를 소개한다.  
+|FROM|이미지 지정|
+|----|---------|
+|RUN|명령어 실행|
+|COPY/ADD|파일을 이미지에 복사|
+|CMD|컨테이너 시작시 실행할 명령어(1개만)|
+|ENTRYPOINT|컨테이너 시작시 실행할 명령어(CMD와 함께 사용)|
+|WORKDIR|작업 디렉토리 지정|
+|ENV|환경 변수 세팅|
+|EXPOSE|컨테이너에서 노출할 포트|
+
+dockerfile은 여기까지 알아보고, 이젠 docker compose에 대해서 알아보자.  
+
+- Docker Compose란?
+```jsx
+  - 여러 컨테이너를 한번에 실행할 수 있는 선언적 구성 도구이다.
+  - 서비스 간의 의존성, 웹 서버와 db, 캐시등을 통합 관리할 수 있다.
+```
+처음 나의 사이드 프로젝트를 구상할때, 막연히 도커를 사용해봐야겠다! 라고 생각하고 맨땅에 헤딩하듯이 공부했다.
+dockerfile까지 알아봣을때, 그러면 이미지를 일일히 구현해서 서버에 올려야 하는건가? 라는 생각을했다.
+스크립트를 활용해서 따로 선언문을 작성하는게 손이 덜 가겠다라고 생각을 하던 와중 docker compose 라는 개념을 공부했다.
+역시 똑똑한 사람들은 이미 내가 했던 생각을 다 먼저 생각했던 것이 틀림이 없다.
+밑의 예시는 나의 docker compose 중 일부분을 발췌해서 가지고 왔다.
+```jsx
+  services:
+    mysql:
+      image: mysql:8.0
+      container_name: mysql-db
+      environment:
+        MYSQL_ROOT_PASSWORD: mysql 비밀번호
+        MYSQL_DATABASE: mysql 데이터베이스
+        MYSQL_USER: mysql 유저
+        MYSQL_PASSWORD: mysql 비밀번호
+        MYSQL_ROOT_HOST: '%' # 모든 IP에서 접속 허용 (로컬 개발 시 중요)
+
+      ports:
+        - "3306:3306" # 로컬 개발용 외부 접속 허용
+      volumes: # docker로 db를 구성시, 이미지를 내렸을 때 데이터가 사라지는 것을 막기위해 밑의 경로에 db 데이터를 남겨놓는 방법
+        - ./mysql-data:/var/lib/mysql
+      networks:
+        - fit-network
+      command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      healthcheck:
+        test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+
+    redis:
+      image: redis:alpine
+      container_name: redis
+      ports:
+        - "6379:6379" # 로컬 개발용 외부 접속 허용
+      networks:
+        - fit-network
+```
+
+현재 나의 프로젝트는 개발중이고, 편의를 위해서 모든 ip에서 접속이 가능하게 만들어놧지만, 추후에는 내가 지정하는 ip 내부망으로만 통신 될 수 있게 수정할거다.
+이런식으로 핵심 섹션 (services) 안에 여러 컨테이너 정보를 담을 수 있다.
+
+- Docker compose 명령어
+
+```jsx
+  1. docker compose build : 도커 이미지를 빌드한다. 
+    * docker compose build --no-cache  
+      기존 남아있는 캐시를 지우고 완전 처음부터 설치 시작한다.  
+      만약 빌드중 이전 버전의 정보가 남아있어 충돌이 나는 경우, 캐시를 지우고 실행해보자.  
+  2. docker compose up -d : 서비스를 시작한다. 뒤의 -d는 해당 콘솔이 종료되도 백그라운드에서 실행할 수 있게 해주는 명령어다.
+  3. docker compose down : 컨테이너를 모두 중지하고 삭제한다.
+    * docker compose down -v  
+      down만 사용하면 볼륨은 남기고 삭제하므로, 볼륨까지 삭제하고 싶다면 위 명령어를 사용한다.
+  4. docker compose ps : 컨테이너의 현제 상태를 표시해준다
+  5. docker compose logs -f : 실시간 로그를 모니터링 해준다.
+```
+이외에도 많은 명령어들이 있으나, 아직 사용해본 명령어만 정리하도록 하겠다.
+
+## 4. 마치며
+처음 공식문서를 뒤지고, 여러 매체를 통해 공부를 해도 무슨 개념인지 파악하기 힘들었는데  
+역시 실습을 하면서 공부를 하니 이해가 잘 되었다. 
+추후에는 docker 서버를 스케일링 하고, 최적화 하는 방법을 더 공부 해 봐야겠다.
