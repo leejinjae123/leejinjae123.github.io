@@ -198,49 +198,50 @@ Stage 1 에서는 소스를 컴파일하고, 메모리 부족을 예방하기 �
 
 dockerfile은 여기까지 알아보고, 이젠 docker compose에 대해서 알아보자.  
 
-- Docker Compose란?
-```jsx
-  - 여러 컨테이너를 한번에 실행할 수 있는 선언적 구성 도구이다.
-  - 서비스 간의 의존성, 웹 서버와 db, 캐시등을 통합 관리할 수 있다.
-```
+- Docker Compose란?  
+  ```jsx
+    - 여러 컨테이너를 한번에 실행할 수 있는 선언적 구성 도구이다.
+    - 서비스 간의 의존성, 웹 서버와 db, 캐시등을 통합 관리할 수 있다.
+  ```
 처음 나의 사이드 프로젝트를 구상할때, 막연히 도커를 사용해봐야겠다! 라고 생각하고 맨땅에 헤딩하듯이 공부했다.
 dockerfile까지 알아봣을때, 그러면 이미지를 일일히 구현해서 서버에 올려야 하는건가? 라는 생각을했다.
 스크립트를 활용해서 따로 선언문을 작성하는게 손이 덜 가겠다라고 생각을 하던 와중 docker compose 라는 개념을 공부했다.
 역시 똑똑한 사람들은 이미 내가 했던 생각을 다 먼저 생각했던 것이 틀림이 없다.
-밑의 예시는 나의 docker compose 중 일부분을 발췌해서 가지고 왔다.
-```jsx
-  services:
-    mysql:
-      image: mysql:8.0
-      container_name: mysql-db
-      environment:
-        MYSQL_ROOT_PASSWORD: mysql 비밀번호
-        MYSQL_DATABASE: mysql 데이터베이스
-        MYSQL_USER: mysql 유저
-        MYSQL_PASSWORD: mysql 비밀번호
-        MYSQL_ROOT_HOST: '%' # 모든 IP에서 접속 허용 (로컬 개발 시 중요)
+밑의 예시는 나의 docker compose 중 일부분을 발췌해서 가지고 왔다.  
 
-      ports:
-        - "3306:3306" # 로컬 개발용 외부 접속 허용
-      volumes: # docker로 db를 구성시, 이미지를 내렸을 때 데이터가 사라지는 것을 막기위해 밑의 경로에 db 데이터를 남겨놓는 방법
-        - ./mysql-data:/var/lib/mysql
-      networks:
-        - fit-network
-      command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-      healthcheck:
-        test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-        interval: 10s
-        timeout: 5s
-        retries: 5
+  ```jsx
+    services:
+      mysql:
+        image: mysql:8.0
+        container_name: mysql-db
+        environment:
+          MYSQL_ROOT_PASSWORD: mysql 비밀번호
+          MYSQL_DATABASE: mysql 데이터베이스
+          MYSQL_USER: mysql 유저
+          MYSQL_PASSWORD: mysql 비밀번호
+          MYSQL_ROOT_HOST: '%' # 모든 IP에서 접속 허용 (로컬 개발 시 중요)
 
-    redis:
-      image: redis:alpine
-      container_name: redis
-      ports:
-        - "6379:6379" # 로컬 개발용 외부 접속 허용
-      networks:
-        - fit-network
-```
+        ports:
+          - "3306:3306" # 로컬 개발용 외부 접속 허용
+        volumes: # docker로 db를 구성시, 이미지를 내렸을 때 데이터가 사라지는 것을 막기위해 밑의 경로에 db 데이터를 남겨놓는 방법
+          - ./mysql-data:/var/lib/mysql
+        networks:
+          - fit-network
+        command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        healthcheck:
+          test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+          interval: 10s
+          timeout: 5s
+          retries: 5
+
+      redis:
+        image: redis:alpine
+        container_name: redis
+        ports:
+          - "6379:6379" # 로컬 개발용 외부 접속 허용
+        networks:
+          - fit-network
+  ```
 
 현재 나의 프로젝트는 개발중이고, 편의를 위해서 모든 ip에서 접속이 가능하게 만들어놧지만, 추후에는 내가 지정하는 ip 내부망으로만 통신 될 수 있게 수정할거다.
 이런식으로 핵심 섹션 (services) 안에 여러 컨테이너 정보를 담을 수 있다.
