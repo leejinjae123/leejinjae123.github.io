@@ -92,51 +92,53 @@ docker desktop은 '소규모 기업' 기준을 초과하는 경우이다.
 
   버전관리에 신경을 써야한다.
   만약 기존에 도커를 설치한 이력이 있다면, 제거를 해줘야한다.
+  순서대로 진행해주자.
   ```jsx
     삭제 명령어 : sudo apt-get remove docker docker-engine docker.io containerd runc
   ```
-  - 1. 패키지 업데이트
+  - 패키지 업데이트
     ```jsx
       sudo apt-get update
     ```
-  - 2. 필수 패키지 설치
+  - 필수 패키지 설치
     ```jsx
       sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
     ```
-  - 3. Docker 공식 GPG 키 추가
+  - Docker 공식 GPG 키 추가
     GPG 키는 공식 저장소에서 제공하는 무결성 검증 디지털 서명 키다. 등록하지 않으면 Docker을 사용할 수 없다.
     ```jsx
       curl -fsSL [https://download.docker.com/linux/ubuntu/gpg](https://download.docker.com/linux/ubuntu/gpg) | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
     ```
-  - 4. Docker 저장소 추가
+  - Docker 저장소 추가
     ```jsx
       echo "deb \[arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg\] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) $(lsb\_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     ```
-  - 5. 패키지 업데이트를 다시 진행!
-  - 6. Docker 관련 패키지 설치
+  - 패키지 업데이트를 다시 진행  
+
+  - Docker 관련 패키지 설치
     ```jsx
       sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
-  - 7. 설치 확인
+  - 설치 확인
     ```jsx
       sudo docker --version
     ```
 - 번외) 도커 컴포즈 설치
 
-  - 1. 도커 컴포즈 설치
+  - 도커 컴포즈 설치
     다른 버전을 쓰고싶다면 가운데 v2.5.0을 변경하면 된다.
     ```jsx
       sudo curl -L "https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     ```
-  - 2. 도커 컴포즈 권한 부여
+  - 도커 컴포즈 권한 부여
     ```jsx
       sudo chmod +x /usr/local/bin/docker-compose
     ```
-  - 3. 심볼릭 링크 연결
+  - 심볼릭 링크 연결
     ```jsx
       sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     ```
-  - 4. 설치 확인
+  - 설치 확인
     ```jsx
       docker-compose --version (v1버전)
       docker compose --version (v2버전)
@@ -183,7 +185,7 @@ Stage 1 에서는 소스를 컴파일하고, 메모리 부족을 예방하기 �
 이런식으로 미리 빌드를 하는 과정을 적어놓아 이미지를 생성하는 방법을 설명한 파일이 dockerfile이다.
 Dockerfile의 명령어를 소개한다.  
 |FROM|이미지 지정|
-|----|---------|
+|---|---|
 |RUN|명령어 실행|
 |COPY/ADD|파일을 이미지에 복사|
 |CMD|컨테이너 시작시 실행할 명령어(1개만)|
