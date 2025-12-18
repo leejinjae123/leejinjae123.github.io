@@ -9,7 +9,7 @@ tags:
   - Ubuntu
   - SSH
 sidebar:
-  nav: null
+  nav: "sidebar-category"
 permalink: /server/ssh-security/
 ---
 
