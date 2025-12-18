@@ -27,6 +27,8 @@ sidebar-category:
       url: /server/ubuntu-server-setup/
     - title: "docker 설치 및 사용법"
       url: /server/docker-installation-and-usage/
+    - title: "SSH key로 보안 세팅하기"
+      url: /server/ssh-security/
   - title: "TroubleShooting"
     children:
     - title: "포트포워딩 오류"
