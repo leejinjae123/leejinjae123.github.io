@@ -9,7 +9,7 @@ tags:
   - Ubuntu
   - Network
 sidebar:
-  nav: null
+  nav: "sidebar-category"
 ---
 
 ## 0. 포트포워딩 에러 발생?
