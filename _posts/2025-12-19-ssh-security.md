@@ -57,7 +57,7 @@ sidebar:
 이제 적용방법을 알아보자.  
   
 1. 내 pc에서 SSH 키 생성 : 터미널을 열어 명령어를 입력한다.  
-  ```jsx
+  ```bash
   ssh-keygen -t rsa -b 4096
   해당 키는 기본경로(~/.ssh/id_rsa)에 저장됩니다.  
   * 비밀번호는 선택사항입니다.
@@ -65,25 +65,26 @@ sidebar:
 
 2. 서버(우분투)로 공개키 복사
   - 자동복사 : 내 pc에서 서버로 자동으로 공개키를 복사해 준다.
-  ```jsx
+  ```bash
   ssh-copy-id -p [포트번호] [서버계정]@[도메인]
   ```
   만약 이 방법이 작동하지 않을 경우  
   - 수동복사 : 내 pc의 id_rsa.pub 내용을 복사 해 서버의 ~/.ssh/authorized_keys 파일 안에 그 내용을 붙여넣고 저장합니다.  
 
   이 작업 후에 파일 권한을 보안에 맞게 수정해 줘야한다.
-  ```jsx
+  ```bash
   chmod 600 ~/.ssh/authorized_keys
   ```
 
 3. SSH 키로 서버 접속 확인
-```jsx
+
+  ```bash
   # 기본 명령어
   ssh -p [포트번호] [서버계정]@[도메인]
 
   # 만약 키 파일이 여러 개라 특정 키를 지정해야 한다면
   ssh -i ~/.ssh/id_rsa -p [포트번호] [서버계정]@[도메인]
-```
+  ```
 
 4. SSH 보안 설정
 
@@ -91,7 +92,7 @@ sidebar:
 이렇게 하면 키파일을 해킹하지 않는 이상 절대로 들어올 수 없다.
   
   1. 서버 설정 파일을 연다.
-  ```jsx
+  ```bash
   sudo nano /etc/ssh/sshd_config
   ```
 
@@ -103,7 +104,7 @@ sidebar:
     - PermitRootLogin no (root 계정 접속 금지 - 보안상 권장)
 
   3. SSH 재시작  
-  ```jsx
+  ```bash
   sudo systemctl restart ssh
   ```
 
@@ -113,7 +114,7 @@ sidebar:
     1. PC의 ~/.ssh/ 폴더에 config라는 이름의 파일을 만듭니다 (**확장자 없음**).
 
     2. 메모장 등으로 열어 아래 내용을 넣습니다.
-    ```jsx
+    ```bash
       Host my-server
         HostName [도메인]
         User [서버계정명]
