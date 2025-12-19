@@ -10,7 +10,6 @@ tags:
   - SSH
 sidebar:
   nav: "sidebar-category"
-permalink: /server/ssh-security/
 ---
 
 ## 0. 이제는 보안을 챙길때
@@ -78,17 +77,18 @@ permalink: /server/ssh-security/
   ```
 
 3. SSH 키로 서버 접속 확인
-  ```jsx
+```jsx
   # 기본 명령어
   ssh -p [포트번호] [서버계정]@[도메인]
 
   # 만약 키 파일이 여러 개라 특정 키를 지정해야 한다면
   ssh -i ~/.ssh/id_rsa -p [포트번호] [서버계정]@[도메인]
-  ```
+```
 
 4. SSH 보안 설정
-  키 접속이 성공했다면, 이제 비밀번호를 입력하여 서버에 접속하는 방식을 아에 막아버릴거다.
-  이렇게 하면 키파일을 해킹하지 않는 이상 절대로 들어올 수 없다.
+
+키 접속이 성공했다면, 이제 비밀번호를 입력하여 서버에 접속하는 방식을 아에 막아버릴거다.  
+이렇게 하면 키파일을 해킹하지 않는 이상 절대로 들어올 수 없다.
   
   1. 서버 설정 파일을 연다.
   ```jsx
@@ -102,7 +102,7 @@ permalink: /server/ssh-security/
 
     - PermitRootLogin no (root 계정 접속 금지 - 보안상 권장)
 
-  3. SSH 재시작
+  3. SSH 재시작  
   ```jsx
   sudo systemctl restart ssh
   ```
@@ -114,11 +114,11 @@ permalink: /server/ssh-security/
 
     2. 메모장 등으로 열어 아래 내용을 넣습니다.
     ```Plaintext
-    Host my-server
-    HostName [도메인]
-    User [서버계정명]
-    Port [포트번호]
-    IdentityFile ~/.ssh/id_rsa
+      Host my-server
+        HostName [도메인]
+        User [서버계정명]
+        Port [포트번호]
+        IdentityFile ~/.ssh/id_rsa
     ```
 
     3. 이제 터미널에서 ssh my-server 라고만 치면 접속가능하다!
