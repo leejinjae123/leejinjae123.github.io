@@ -113,7 +113,7 @@ sidebar:
     1. PC의 ~/.ssh/ 폴더에 config라는 이름의 파일을 만듭니다 (**확장자 없음**).
 
     2. 메모장 등으로 열어 아래 내용을 넣습니다.
-    ```Plaintext
+    ```jsx
       Host my-server
         HostName [도메인]
         User [서버계정명]
