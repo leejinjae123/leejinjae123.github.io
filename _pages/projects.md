@@ -10,7 +10,7 @@ sidebar:
 
 ## AromaBank - 향료 관리 시스템
 
-**기간**: 2025.04 ~ 재직중  
+**기간**: 2025.04 ~ 2025.10
 **역할**: 백엔드 리드 개발자 (기여도 100%)  
 **기술 스택**: Java 8+, Spring Framework, Spring Security, MyBatis, MySQL, JSP, jQuery, Apache POI  
 **핵심 목표**: 데이터 정제, 규제 대응 자동화, MES 기반 실시간 공정 관리
@@ -119,4 +119,14 @@ sidebar:
 - 최신 프레임워크 도입으로 유지보수성 및 확장성 확보
 - 반응형 UI 적용으로 다양한 디바이스에서 사용자 경험 향상
 - AWS Lightsail 배포 자동화로 운영 효율성 증대
+
+## AI 기반 운동 & 루틴 추천 및 기록 프로그램 (**개인 프로젝트**)
+
+**기간**: 2025.12 ~ 진행중
+**기술 스택**: React, Spring Boot, JPA, Redis, Kafka, Python, MySQL, Docker, Github Action
+
+AI 기반의 운동 루틴 기록 & 추천 시스템입니다. 마이크로서비스 아키텍처(MSA)를 기반으로 설계되었으며, 실시간 데이터 처리를 위해 Kafka를, 동시성 제어를 위해 Redis를 사용합니다.  
+서버는 개발을 위한 우분투 리눅스 서버와 배포용 AWS 서버를 동시에 운영합니다.  
+배포 자동화를 위해 Github Action을 이용해 CI/CD를 자동화합니다.
+
 
